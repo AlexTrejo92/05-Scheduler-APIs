@@ -2,18 +2,25 @@
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
 
-console.log(dayjs);
+$(function wrapper() {
+  /* TODO: Add a listener for click events on the save button. This code should
+  use the id in the containing time-block as a key to save the user input in
+  local storage. HINT: What does `this` reference in the click listener
+  function? How can DOM traversal be used to get the "hour-x" id of the
+  time-block containing the button that was clicked? How might the id be
+  useful when saving the description in local storage? */
 
-$(function () {
-  // TODO: Add a listener for click events on the save button. This code should
-  // use the id in the containing time-block as a key to save the user input in
-  // local storage. HINT: What does `this` reference in the click listener
-  // function? How can DOM traversal be used to get the "hour-x" id of the
-  // time-block containing the button that was clicked? How might the id be
-  // useful when saving the description in local storage?
+  var clickBtn = $('#btn');
+
+clickBtn.on('click', function () {
+  console.log('You clicked a button!');
+  
+});
 
 
+// var clickBtn = $('#hour-8').children()
 
+// console.log(clickBtn);
 
 
 
@@ -25,30 +32,27 @@ $(function () {
   // past, present, and future classes? How can Day.js be used to get the
   // current hour in 24-hour time?
   var currentHour = dayjs().hour();
-  console.log(currentHour);
-
   var scheduleHour = $('#hour-8')[0].attributes.value.textContent;
-
   console.log(scheduleHour);
   console.log(typeof scheduleHour);
-
   console.log(currentHour);
-  console.log(typeof currentHour)
+  console.log(typeof currentHour);
 
-  currentHour = 8;
   scheduleHour = 8;
+  // console.log(scheduleHour);
+  // console.log(typeof scheduleHour);
 
-  if (currentHour === scheduleHour ) {
-    console.log('CORRECT TEST');
-    $('hour-8').addClass('present');
-    $('hour-8').removeClass('past')
-    $('hour-8').removeClass('future')
+  if (currentHour = scheduleHour ) {
+    console.log('currentHour matches scheduleHour');
+    $('#hour-8').addClass('present');
+    $('#hour-8').removeClass('past')
+    $('#hour-8').removeClass('future')
   } else if (currentHour < scheduleHour) {
-    $('hour-8').addClass('past')
-    $('hour-8').removeClass('present')
-    $('hour-8').removeClass('present')  
+    $('#hour-8').addClass('past')
+    $('#hour-8').removeClass('present')
+    $('#hour-8').removeClass('present')  
   } else {
-    $('hour-8').addClass('future')
+    $('#hour-8').addClass('future')
   }
 
   //
@@ -66,9 +70,7 @@ $(function () {
   // TODO: Add code to display the current date in the header of the page.
   var today = dayjs();
   $('#currentDay').text(today.format('dddd, MMMM DD'));
-
-
-
 });
 
-$('#btn').on('click', console.log('You clicked a button!'));
+
+// $('#btn').on('click', console.log('You clicked a button!'));
