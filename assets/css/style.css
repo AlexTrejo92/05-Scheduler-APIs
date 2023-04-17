@@ -37,7 +37,7 @@ textarea {
 }
 
 .past {
-  background-color: #d3d3d3;
+  background-color: #e29e77;
   color: white;
 }
 
@@ -62,4 +62,18 @@ textarea {
 .saveBtn i:hover {
   font-size: 20px;
   transition: all 0.3s ease-in-out;
+}
+
+.hidden {
+  display: none;
+}
+
+#spanText {
+  font-family: 'Times New Roman', Times, serif;
+  color: coral;
+}
+
+h3 {
+  font-size: small;
+  text-align: center;
 }
